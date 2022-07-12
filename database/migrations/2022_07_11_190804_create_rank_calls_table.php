@@ -18,7 +18,6 @@ return new class extends Migration
             $table->integer('bestseller_rank');
             $table->integer('handbook_rank');
             $table->integer('techbook_rank');
-            $table->integer('book_id');
             $table->timestamps();
             $table->index(['call_id', 'created_at']);
             $table->foreignId('book_id')->constrained('books');

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('publisher');
             $table->string('Isbn-13');
             $table->longText('description');
-            $table->doubel('price_in_euro', 8, 2);
+            $table->double('price_in_euro', 8, 2);
             $table->timestamps();
         });
     }
