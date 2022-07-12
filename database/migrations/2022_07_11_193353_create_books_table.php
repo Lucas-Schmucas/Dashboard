@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->date('release_date');
-            $table->int('pages');
+            $table->smallInteger('pages');
             $table->string('author');
             $table->string('language');
             $table->string('publisher');

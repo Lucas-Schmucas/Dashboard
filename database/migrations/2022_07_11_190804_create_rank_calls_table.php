@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('rank_calls', function (Blueprint $table) {
             $table->id('call_id');
-            $table->int('bestseller_rank');
-            $table->int('handbook_rank');
-            $table->int('techbook_rank');
-            $table->int('book_id');
+            $table->integer('bestseller_rank');
+            $table->integer('handbook_rank');
+            $table->integer('techbook_rank');
+            $table->integer('book_id');
             $table->timestamps();
             $table->index(['call_id', 'created_at']);
+            $table->foreignId('book_id')->constrained('books');
         });
     }
 
