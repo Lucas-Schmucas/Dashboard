@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('language');
             $table->string('publisher');
             $table->string('Isbn-13');
+            $table->string('url');
             $table->longText('description');
             $table->double('price_in_euro', 8, 2);
             $table->timestamps();
