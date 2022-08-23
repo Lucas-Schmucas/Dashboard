@@ -2,9 +2,8 @@
 
 namespace App\Support;
 
-use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
 use App\Models\Book;
+use Illuminate\Support\Facades\Http;
 
 class HttpCall
 {
@@ -16,13 +15,8 @@ class HttpCall
     public function sendCallTo($name) : array
     {
         $url = Book::getBookUrlFromName($name);
-        $client = new Client();
-        $request = new Request('GET',$url);
-        $res = $client->sendAsync($request)->wait();
-        $res->getBody();
-        $arrayWithRanks = [];
-        // $arrayWithRanks = parsed body
-        return $arrayWithRanks;
+
+        return Http::get($url)->object();
     }
     // TODO: function to parse ranks out of the body in a key value array
 
