@@ -3,22 +3,31 @@
 namespace App\Support;
 
 use App\Models\Book;
+use DOMDocument;
 use Illuminate\Support\Facades\Http;
 
 class HttpCall
 {
-
     /**
      * @param $name
-     * @return array
+     * @return DOMDocument
      */
-    public function sendCallTo($name) : array
+    public function sendCallTo($name) : string
     {
         $url = Book::getBookUrlFromName($name);
 
-        return Http::get($url)->object();
+       return Http::get($url)->body();
     }
-    // TODO: function to parse ranks out of the body in a key value array
 
+    /**
+     * @param string $htmlString
+     * @return DOMDocument
+     */
+    private function htmlToObject(string $htmlString) : DOMDocument
+    {
+        $dom = new DOMDocument();
+        $dom->loadHTML($htmlString);
+        return $dom;
+    }
     // TODO: function to save the array to the db
 }
