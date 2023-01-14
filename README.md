@@ -1,4 +1,13 @@
+<h1> Project is cancled </h1>
+
+Turns out, it is very unreliable to track sales by jumps in amazon-rankings (by approximately 1:3)
+
+--- 
+
+
 <h1>Dashboard to keep track of book rankings </h1>
+
+ 
 
 <h2>Done:</h2>
     <p>
