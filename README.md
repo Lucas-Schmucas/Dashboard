@@ -2,7 +2,7 @@
 
 Turns out, it is very unreliable to track sales by jumps in amazon-rankings (by approximately 1:3).
 
-To adjust accuracy with a correction factor, feels also unreliable, so the Project is cancled.
+To adjust accuracy with a correction factor, feels also unreliable, so the Project is canceled.
 
 --- 
 
