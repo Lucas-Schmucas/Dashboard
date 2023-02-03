@@ -1,4 +1,4 @@
-<h1> Project is cancled </h1>
+<h1> Project is canceled </h1>
 
 Turns out, it is very unreliable to track sales by jumps in amazon-rankings (by approximately 1:3).
 
