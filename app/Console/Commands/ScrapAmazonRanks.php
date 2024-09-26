@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Book;
+use App\Support\HttpCall;
 use Illuminate\Console\Command;
 
 class ScrapAmazonRanks extends Command
@@ -11,22 +13,23 @@ class ScrapAmazonRanks extends Command
      *
      * @var string
      */
-    protected $signature = 'get:rank';
+    protected $signature = 'get:rank {book_name}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Send a call to Amazon and grab those book ranks';
+    protected $description = 'Scrap that rank from the Book';
 
     /**
      * Execute the console command.
      *
-     * @return int
+     * @param HttpCall $call
+     * @return void
      */
-    public function handle()
+    public function handle(HttpCall $call) : void
     {
-        return 0;
+        $call->sendCallTo($this->argument('book_name'));
     }
 }
